@@ -1,0 +1,31 @@
+git reset HEAD filename  == make file or change untracked
+
+git revert HEAD  == revert last commit. Creates new commit deleting last commits changes
+
+git diff --staged == see what is staged, that will go to commit. compares staged and last commit
+
+git log -p -2 == This option displays the same information but with a diff directly following each entry. This is very
+			helpful for code review or to quickly browse what happened during a series of commits that a
+			collaborator has added. You can also use a series of summarizing options with git log. For
+			example, if you want to see some abbreviated stats for each commit, you can use the --stat option
+
+git commit --amend == amend forgotten stuff to the prev commit e.g:	$ git commit -m 'Initial commit'
+									$ git add forgotten_file
+									$ git commit --amend
+----------Tagging-----------------------------------------------------------------------------------------------------------------
+
+Git supports two types of tags: lightweight and annotated.
+A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific
+commit.
+Annotated tags, however, are stored as full objects in the Git database. They’re checksummed;
+contain the tagger name, email, and date; have a tagging message; and can be signed and verified
+with GNU Privacy Guard (GPG). It’s generally recommended that you create annotated tags so you
+can have all this information; but if you want a temporary tag or for some reason don’t want to
+keep the other information, lightweight tags are available too.
+***Annotated****
+$ git tag -a v1.4 -m "my version 1.4"
+$ git tag
+v0.1
+v1.3
+v1.4
+-------------------------------------------------------------------------------------------------------------------
